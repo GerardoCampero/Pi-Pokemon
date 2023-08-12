@@ -1,0 +1,10 @@
+export const ENDPOINT = `http://localhost:3001`;
+export const GET_POKEMONS = 'GET_POKEMONS';
+export const GET_DETAIL = 'GET_DETAIL';
+export const CLEAR_DETAIL = 'CLEAR_DETAIL';
+export const GET_NAME = 'GET_NAME';
+export const CLEAR_POKEMON = 'CLEAR_POKEMON';
+export const ORDER_POKEMONS = 'ORDER_POKEMONS';
+export const ORIGIN_FILTER = 'ORIGIN_FILTER';
+export const GET_TYPES = 'GET_TYPES';
+export const TYPES_FILTER = 'TYPES_FILTER';
