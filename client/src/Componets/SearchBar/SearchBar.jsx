@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"; 
 import { useState } from "react";
+import style from "./SearchBar.module.css"
 
 export default function SearchBar () {
     const [searchInput, setSearchInput] = useState('');
@@ -8,12 +9,14 @@ export default function SearchBar () {
     };
     return (
         <div>
-            <input
+            <input required="" className={style.input}
                 onChange={changeHandler}
                 type="text"
                 placeholder="Buscá tu Pokémon!"></input>
+            <span className={style.highlight}></span>
+            <span className={style.bar}></span>
             <Link to={`/home/${searchInput}`}>
-                <button>GO</button>
+                <button className={style.go}>GO</button>
             </Link>
 
         </div>

@@ -2,18 +2,25 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { capitalizeFN } from "../../utils/functions";
 import { useEffect } from "react";
-import { getTypes } from "../../Redux/actions";
+import { getTypes, switchNavBar } from "../../Redux/actions";
 import axios from "axios";
 import { ENDPOINT } from "../../utils/actionsConstant";
+import Flecha from '../../utils/assets/Flecha.png'
+import { Link } from "react-router-dom";
+import style from "./Form.module.css"
 
 
 function Form() {
     const dispatch = useDispatch();
     const types = useSelector(state=>state.types)
-   
+    
+    dispatch(switchNavBar(false))
 
     useEffect(() => {
         dispatch(getTypes());
+        return () => {
+            dispatch(switchNavBar(true))
+        }
     },[dispatch])
     
   
@@ -75,7 +82,11 @@ function Form() {
 
     
     return (
+        
         <div>
+            <Link to={'/home'}>
+                <img className={style.flecha} src={Flecha} alt='Go Back'/>
+            </Link>
             <form onSubmit={submitHandler}>
                 <div>
                     <label>Nombre:</label>

@@ -9,9 +9,9 @@ function Landing() {
     
     return (
         <div className={style.contenedor}>
-            <img className={style.logo} src={pokeLogo} alt="Profesor Oak"/>
+            <img className={style.logo} src={pokeLogo} alt="Pokémon logo"/>
             <Link to={'/home'}>
-            <p className={style.si}>Si!</p>
+            <p className={style.si} style={{ textDecoration: 'none', color: 'black' }}>Si!</p>
             </Link>
             <p className={style.text}>¿Deseas comenzar tu aventura Pokémon?</p>
             <img className={style.oak} src={oak} alt="Profesor Oak"/>

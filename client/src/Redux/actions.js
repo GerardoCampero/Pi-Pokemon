@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ENDPOINT, GET_POKEMONS, GET_DETAIL, CLEAR_DETAIL , GET_NAME, CLEAR_POKEMON, ORDER_POKEMONS, ORIGIN_FILTER, GET_TYPES, TYPES_FILTER} from "../utils/actionsConstant";
+import { ENDPOINT, GET_POKEMONS, GET_DETAIL, CLEAR_DETAIL , GET_NAME, CLEAR_POKEMON, ORDER_POKEMONS, ORIGIN_FILTER, GET_TYPES, TYPES_FILTER, SWITCH_NAVBAR} from "../utils/actionsConstant";
 
 export const getPokemons = () => {
     return async (dispatch) => {
@@ -93,6 +93,15 @@ export const pokeFilterType = (filter) => {
         return dispatch ({
             type: TYPES_FILTER,
             payload: filter,
+        })
+    }
+}
+
+export const switchNavBar = (sw) => {
+    return (dispatch) => {
+        return dispatch ({
+            type: SWITCH_NAVBAR,
+            payload: sw,
         })
     }
 }

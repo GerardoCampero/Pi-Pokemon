@@ -8,3 +8,4 @@ export const ORDER_POKEMONS = 'ORDER_POKEMONS';
 export const ORIGIN_FILTER = 'ORIGIN_FILTER';
 export const GET_TYPES = 'GET_TYPES';
 export const TYPES_FILTER = 'TYPES_FILTER';
+export const SWITCH_NAVBAR = 'SWITCH_NAVBAR';

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { pokeFilterDB, pokeFilterType } from "../../Redux/actions";
 import { capitalizeFN } from "../../utils/functions";
+import style from "./Filter.module.css"
 
 const FilterPokemonsByCreate = () => {
     const dispatch = useDispatch();
@@ -15,8 +16,8 @@ const FilterPokemonsByCreate = () => {
 
     return (
         <div>
-            <select defaultValue={'DEFAULT'} onChange={handleFilter}>
-                <option value='DEFAULT' selected disabled>Filtrar por origen:</option>
+            <select className={style.select} defaultValue={'DEFAULT'} onChange={handleFilter}>
+                <option value='DEFAULT' selected disabled>Origen:</option>
                 <option value='A' >Base de datos</option>
                 <option value='B' >API</option>
             </select>
@@ -37,8 +38,8 @@ const FilterPokemonByType = () => {
     }
     return (
         <div>
-            <select defaultValue={'DEFAULT'}  onChange={handleFilter}>
-                <option value='DEFAULT' selected disabled>Filtrar por Tipo:</option>
+            <select className={style.select} defaultValue={'DEFAULT'}  onChange={handleFilter}>
+                <option value='DEFAULT' selected disabled>Tipo:</option>
                 {
                     types?.map((type) => {
                         const nombre = capitalizeFN(type.Nombre)

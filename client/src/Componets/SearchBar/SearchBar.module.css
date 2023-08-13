@@ -1,0 +1,108 @@
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+   }
+
+.input:focus {
+    outline: none;
+  }
+  
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+   
+.input:focus ~ label, .input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+  }
+   
+.bar {
+    position: relative;
+    display: block;
+    width: 200px;
+  }
+   
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+   
+.bar:before {
+    left: 50%;
+   }
+   
+.bar:after {
+    right: 50%;
+  }
+   
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+    width: 50%;
+}
+   
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+ }
+   
+ input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+ }
+
+
+.go{
+    position: relative;
+    border: none;
+    outline-offset: -4px;
+    background: transparent;
+    box-shadow: inset -1px -1px #292929, inset 1px 1px #ffffff29, inset -2px -2px rgb(158 158 158 / 0%), inset 2px 2px #ffffff00;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 10px;
+    top: -1.9em;
+    left: -1.3em;
+}
+
+.go:active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #292929, inset -2px -2px #ffffff, inset 2px 2px rgb(158, 158, 158);
+  }
+   
+@keyframes inputHighlighter {
+    from {
+     background: #5264AE;
+    }
+   
+    to {
+     width: 0;
+     background: transparent;
+    }
+   }   
+
+

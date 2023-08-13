@@ -1,3 +1,40 @@
-.container{
-    background-color: brown;
+.contenedor{
+    opacity: 100;
+
 }
+
+.pokeImg{
+
+    width: 170px;
+    height: 145px;
+}
+
+
+
+.nombre{
+    
+    height: 1rem;
+    width: 10rem;
+    padding: 0;
+    margin: -11px;
+    z-index: 11;
+    position: relative;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 15px;
+    font-family: 'pokemon-font', monospace;
+    font-size: 0.8rem;
+    bottom: 3em;
+    left: 0.8rem;
+    opacity: 0;
+  
+
+
+}
+
+.nombre:hover {
+    opacity: 100;
+}
+
+
+

@@ -1,10 +1,11 @@
-import { GET_POKEMONS, GET_DETAIL, CLEAR_DETAIL, GET_NAME, CLEAR_POKEMON, ORDER_POKEMONS, ORIGIN_FILTER, GET_TYPES, TYPES_FILTER } from "../utils/actionsConstant";
+import { GET_POKEMONS, GET_DETAIL, CLEAR_DETAIL, GET_NAME, CLEAR_POKEMON, ORDER_POKEMONS, ORIGIN_FILTER, GET_TYPES, TYPES_FILTER, SWITCH_NAVBAR } from "../utils/actionsConstant";
 
 const initialState = {
   pokemons: [],
   fullPokemons: [],
   pokeDetail: [],
   types: [],
+  navBarSW: true,
 }
 
 
@@ -87,7 +88,7 @@ const rootReducer = (state = initialState, action) => {
               for(let f = 0; f < pokemon.Tipo.length; f++) {
                 let tipo = pokemon.Tipo[f]
                 if(tipo === action.payload) {
-                  if(auxBox.length < 26) {
+                  if(auxBox.length < 25) {
                     auxBox.push(pokemon);                   
                   } else {
                     filterPokemons.push(auxBox);
@@ -104,6 +105,11 @@ const rootReducer = (state = initialState, action) => {
                     
           return {...state,
             pokemons: [...filterPokemons],
+          };
+        }
+        case SWITCH_NAVBAR: {
+          return {...state,
+            navBarSW: action.payload
           };
         }
         default:

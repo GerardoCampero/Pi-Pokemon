@@ -1,0 +1,74 @@
+.nav {
+    z-index: 1;
+    margin: 0;
+    position: fixed;
+    height: 0rem;
+    width: 100%;
+    top: 0em;
+    background-color: antiquewhite;
+}
+
+.navNone {
+    display: none;
+}
+
+.PCdeAlguien{
+    z-index: 2;
+    width: 29em;
+    position: absolute;
+    top: 58.5em;
+    left: 2em;
+}
+
+.guardarPokemon{
+    z-index: 3;
+    width: 29em;
+    height: 4.7em;
+    position: absolute;
+    top: 58.5em;
+    right: 2em;
+}
+
+
+.orderPkm{
+    z-index: 3;
+    height: 4.7em;
+    position: absolute;
+    top: 8.5em;
+    right: 2.5em;
+}
+
+.filterCreate{
+    z-index: 3;
+    height: 4.7em;
+    position: absolute;
+    top: 8.5em;
+    right: 12.5em;
+}
+
+.filterType{
+    z-index: 3;
+    height: 4.7em;
+    position: absolute;
+    top: 8.5em;
+    right: 22.5em;
+}
+
+
+.searchBar{
+    z-index: 2;
+    width: 29em;
+    position: absolute;
+    top: 8.5em;
+    left: 3em;
+}
+
+.logo {
+    margin: 0;
+    padding: 0;
+    z-index: 6;
+    width: 15%;
+    position: absolute;
+    left: 0%;
+    top: 0em;
+}

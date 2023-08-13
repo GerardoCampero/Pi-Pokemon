@@ -34,7 +34,6 @@ function Home() {
     } else {
         return (
             <div>
-                <h1>Soy el Home</h1>
                 <PokemonContainer></PokemonContainer>
             </div>
         )
