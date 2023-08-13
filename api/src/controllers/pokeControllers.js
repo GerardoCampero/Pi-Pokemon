@@ -73,7 +73,7 @@ const getPokemonByName = async (name) => {
         pokeBox.push(cleanPokemonAPI)
         return pokeBox;
     } catch(error){
-        throw new Error('No existe Pokémon con ese nombre');
+        throw Error('No existe Pokémon con ese nombre');
     }
     }
     

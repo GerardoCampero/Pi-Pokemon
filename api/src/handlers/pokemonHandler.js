@@ -10,7 +10,6 @@ const getPokemons = async (req, res) => {
         // console.log(results)
         res.status(201).json(results);
     } catch(error) {
-        console.log(error)
         res.status(400).json({ error: error.message });
     }
     };

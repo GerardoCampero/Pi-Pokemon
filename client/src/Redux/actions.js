@@ -37,14 +37,20 @@ export const clearDetail = () => {
         })}
 }
 
+
+
+
 export const getPokemonByName = (name) => {
     return async (dispatch) => {
-        const { data } = await axios.get(`${ENDPOINT}/pokemons?name=${name}`);
-        return dispatch({
-            type: GET_NAME,
-            payload: data,
-        })
-        
+        try {
+            const { data } = await axios.get(`${ENDPOINT}/pokemons?name=${name}`);
+            return dispatch({
+                type: GET_NAME,
+                payload: data,
+            })
+        } catch (error) {
+            alert(error.response.data.error);
+        }
     }
 } 
 
