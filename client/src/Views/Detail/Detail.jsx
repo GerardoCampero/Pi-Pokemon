@@ -8,6 +8,7 @@ import Loading from '../../Componets/Loading/Loading';
 import Flecha from '../../utils/assets/Flecha.png'
 import pokeDex from '../../utils/assets/pokedex.png'
 import pokeDexLogo from '../../utils/assets/Pokédex_logo.png'
+import Flecha2 from '../../utils/assets/Flecha2.png'
 
 
 
@@ -41,6 +42,9 @@ function Detail() {
             <div className={style.container}>
             <Link to={'/home'}>
                 <img className={style.flecha} src={Flecha} alt='Go Back'/>
+            </Link>
+            <Link to={'/form'}>
+                <img className={style.flecha2} src={Flecha2} alt='Go Form'/>
             </Link>
             <img className={style.pokeDexLogo} src={pokeDexLogo} alt='Poke Dex'/>
             <img className={style.pokeDex} src={pokeDex} alt='Poke Dex'/>

@@ -20,6 +20,13 @@
     left: 1em;
 }
 
+.flecha2 {
+    width: 4%;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
 .pokeDexLogo {
     position: relative;
     top: 0.5rem;
