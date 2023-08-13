@@ -11,7 +11,6 @@ export default function Loading () {
             dispatch(switchNavBar(true))
         }
     },[dispatch])
-    
     return (
         <div className={style.loading}>
             <div>

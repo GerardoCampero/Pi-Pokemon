@@ -8,6 +8,8 @@ import { ENDPOINT } from "../../utils/actionsConstant";
 import Flecha from '../../utils/assets/Flecha.png'
 import { Link } from "react-router-dom";
 import style from "./Form.module.css"
+import formBG from '../../utils/assets/BulbaForm.jpg'
+import pokeLogo from '../../utils/assets/pokelogoForm.png'
 
 
 function Form() {
@@ -52,7 +54,6 @@ function Form() {
     const typeHandler = (event) => {
         
         setForm({...form, Tipo:[...form.Tipo, event.target.value]})
-        console.log(form.Tipo)
     }
 
     const changeHandler = (event) => {
@@ -87,50 +88,59 @@ function Form() {
             <Link to={'/home'}>
                 <img className={style.flecha} src={Flecha} alt='Go Back'/>
             </Link>
-            <form onSubmit={submitHandler}>
+            <img className={style.formBG} src={formBG} alt='BG Form'/>
+            <form className={style.form} onSubmit={submitHandler}>
+            <img className={style.pokeLogo} src={pokeLogo} alt='PokeLogo'/>
                 <div>
-                    <label>Nombre:</label>
-                    <input type="text" value={form.Nombre}  onChange={changeHandler} name="Nombre"></input>
+                    <input className={style.input} type="text" placeholder="Nombre:" value={form.Nombre}  onChange={changeHandler} name="Nombre"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Nombre && <span>{errors.Nombre}</span>}
                 </div>
                 <div>
-                    <label>Imagen:</label>
-                    <input type="text" value={form.Imagen}  onChange={changeHandler} name="Imagen"></input>
+                    <input className={style.input} type="text" placeholder="Imagen:" value={form.Imagen}  onChange={changeHandler} name="Imagen"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Imagen && <span>{errors.Imagen}</span>}
                 </div>
                 <div>
-                    <label>Vida:</label>
-                    <input type="text" value={form.Vida}  onChange={changeHandler} name="Vida"></input>
+                    <input className={style.input} type="text" placeholder="Vida:" value={form.Vida}  onChange={changeHandler} name="Vida"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Vida && <span>{errors.Vida}</span>}
                 </div>
                 <div>
-                    <label>Ataque:</label>
-                    <input type="text" value={form.Ataque}  onChange={changeHandler} name="Ataque"></input>
+                    <input className={style.input} type="text" placeholder="Ataque:" value={form.Ataque}  onChange={changeHandler} name="Ataque"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Ataque && <span>{errors.Ataque}</span>}
                 </div>
                 <div>
-                    <label>Defensa:</label>
-                    <input type="text" value={form.Defensa}  onChange={changeHandler} name="Defensa"></input>
+                    <input className={style.input} type="text" placeholder="Defensa:" value={form.Defensa}  onChange={changeHandler} name="Defensa"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Defensa && <span>{errors.Defensa}</span>}
                 </div>
                 <div>
-                    <label>Velocidad:</label>
-                    <input type="text" value={form.Velocidad}  onChange={changeHandler} name="Velocidad"></input>
+                    <input className={style.input} type="text"  placeholder="Velocidad:"value={form.Velocidad}  onChange={changeHandler} name="Velocidad"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Velocidad && <span>{errors.Velocidad}</span>}
                 </div>
                 <div>
-                    <label>Altura:</label>
-                    <input type="text" value={form.Altura}  onChange={changeHandler} name="Altura"></input>
+                    <input className={style.input} type="text" placeholder="Altura:" value={form.Altura}  onChange={changeHandler} name="Altura"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Altura && <span>{errors.Altura}</span>}
                 </div>
                 <div>
-                    <label>Peso:</label>
-                    <input type="text" value={form.Peso}  onChange={changeHandler} name="Peso"></input>
+                    <input className={style.input} type="text" placeholder="Peso:" value={form.Peso}  onChange={changeHandler} name="Peso"></input>
+                    <span className={style.highlight}></span>
+                    <span className={style.bar}></span>
                     {errors.Peso && <span>{errors.Peso}</span>}
                 </div>
                 <div>
-                <span>Tipo 1:</span>
-                <select defaultValue={'DEFAULT'}  onChange={typeHandler}>
+                <select className={style.select} defaultValue={'DEFAULT'}  onChange={typeHandler}>
                 <option value='DEFAULT' selected disabled>Tipo 1:</option>
                 {
                     types?.map((type) => {
@@ -145,8 +155,7 @@ function Form() {
             </select>
                 </div>
                 <div>
-                <span>Tipo 2:</span>
-                <select defaultValue={'DEFAULT'}  onChange={typeHandler}>
+                <select className={style.select} defaultValue={'DEFAULT'}  onChange={typeHandler}>
                 <option value='DEFAULT' selected disabled>Tipo 2:</option>
                 {
                     types?.map((type) => {
@@ -161,7 +170,7 @@ function Form() {
             </select>
                 </div>
 
-                <button type="submit">Guardar Pokémon</button>
+                <button className={style.savePkm} type="submit">Guardar Pokémon</button>
             </form>
         </div>
     )

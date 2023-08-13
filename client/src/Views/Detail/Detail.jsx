@@ -21,11 +21,11 @@ function Detail() {
         return () => {
             dispatch(clearDetail())
             dispatch(clearPokemon())
-            dispatch(switchNavBar(true))
+            // dispatch(switchNavBar(true))
         }
     },[dispatch,id])
     const pokemon =  useSelector(state=>state.pokeDetail);
-    console.log(pokemon)
+    
 
     let capitalize='';
 
@@ -68,7 +68,7 @@ function Detail() {
                         <p>Altura: {pokemon.Altura}</p>
                         <p>Peso: {pokemon.Peso}</p>
                         {pokemon.Tipo && pokemon.Tipo.map((type) =>{
-                            return <p>Tipo: {type}</p>
+                            return <p key={type}>Tipo: {type}</p>
                 })}
                     </div>
                 </div>
