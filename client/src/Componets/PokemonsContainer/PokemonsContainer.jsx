@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Pokemon from "../Pokemon/Pokemon";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./PokemonsContainer.module.css"
 import Box from "../../utils/assets/PCBox.png"
-
+import { switchNavBar } from "../../Redux/actions";
 
 
 
 
 const PokemonContainer = ()=>{
+    const dispatch = useDispatch()
+    // let sw = useSelector(state=>state.navBarSW)
+
+    // if(sw) sw = false;
+
+
+    useEffect(() => {
+        dispatch(switchNavBar(true));
+        return () => {
+            dispatch(switchNavBar(false))
+        }
+    },[dispatch])
 
     const pokeData = useSelector(state=>state.pokemons);
     const [pokeBox, setPokebox] = useState(0);

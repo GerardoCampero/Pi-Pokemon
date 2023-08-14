@@ -1,16 +1,14 @@
 import style from "./Loading.module.css"
 import { switchNavBar } from "../../Redux/actions"
 import { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 export default function Loading () {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(switchNavBar(false));
-        return () => {
-            dispatch(switchNavBar(true))
-        }
     },[dispatch])
+    
     return (
         <div className={style.loading}>
             <div>

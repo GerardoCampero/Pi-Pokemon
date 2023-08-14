@@ -5,7 +5,7 @@ const initialState = {
   fullPokemons: [],
   pokeDetail: [],
   types: [],
-  navBarSW: true,
+  navBarSW:[],
 }
 
 

@@ -5,9 +5,11 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
   const { pathname } = useLocation();
+
+  
   return (
     <div className="App">
-      { pathname !== '/' && <NavBar/> }
+      { pathname !== `/` && <NavBar/> }
       <Routes>
         <Route exact path='/detail/:id' element={<Detail/>}/>
         <Route exact path='/home' element={<Home/>}/>

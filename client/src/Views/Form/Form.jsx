@@ -16,13 +16,11 @@ function Form() {
     const dispatch = useDispatch();
     const types = useSelector(state=>state.types)
     
-    dispatch(switchNavBar(false))
+
 
     useEffect(() => {
+        dispatch(switchNavBar(false))
         dispatch(getTypes());
-        return () => {
-            dispatch(switchNavBar(true))
-        }
     },[dispatch])
     
   

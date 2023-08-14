@@ -13,15 +13,17 @@ import Flecha2 from '../../utils/assets/Flecha2.png'
 
 
 function Detail() {
-    const { id } = useParams()
+    const { id }  = useParams()
+   
     const dispatch = useDispatch();
-    dispatch(switchNavBar(false))
+    // dispatch(switchNavBar(false))
     useEffect(() => {
         dispatch(getDetail(id))
+        // dispatch(switchNavBar(false))
         return () => {
             dispatch(clearDetail())
             dispatch(clearPokemon())
-            // dispatch(switchNavBar(true))
+            // dispatch(switchNavBar(true)) no descomentar
         }
     },[dispatch,id])
     const pokemon =  useSelector(state=>state.pokeDetail);
