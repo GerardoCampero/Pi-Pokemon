@@ -145,3 +145,13 @@ label {
     width: 38%;
     top: -11em;
 }
+
+
+
+
+.Error {
+  width: 30em;
+  position: absolute;
+  font-size: 0.7rem;
+  left: 9em;
+}

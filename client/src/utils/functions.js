@@ -3,6 +3,7 @@
 // https://cutewallpaper.org/27/box-wallpaper-pokemon/filepc-background-forestpng-pixelmon-generations-wiki.png pc box
 
 export function capitalizeFN (string) {
+    console.log(string)
     return string[0].toUpperCase() + string.slice(1, string.length);
 }
 

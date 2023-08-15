@@ -27,7 +27,7 @@ function Form() {
 
     const [form, setForm] = useState({
         Nombre:'',
-        Imagen:"https://upload.wikimedia.org/wikipedia/commons/6/62/MissingNo.png",
+        Imagen:'',
         Vida:'',
         Ataque:'',
         Defensa:'',
@@ -63,7 +63,7 @@ function Form() {
     }
 
     const submitHandler = (event) => {
-        // event.preventDefault()
+        event.preventDefault()
         validate(form, errors)
         axios.post(`${ENDPOINT}/pokemons`, form)
         .then(res=>res, alert('Se guardó Tu Pokémon en la PC de alguien'))
@@ -71,10 +71,10 @@ function Form() {
     }
 
     const validate = (form, errors) =>{
-  
-        
-     
+        console.log(form.Nombre)
+        console.log(errors.Nombre)
         if(form.Nombre.length > 0 && errors.Nombre === '') {
+            console.log('todoBien')
             return setErrors({...errors, Nombre:'✓'})
         } else if(form.Nombre === '' && errors.Nombre === '✓'){
             console.log('falta')
@@ -82,8 +82,8 @@ function Form() {
         } else if(form.Nombre.length > 0 && errors.Nombre === 'Este campo es obligatorio'){
             return setErrors({...errors, Nombre:'✓'})
         }
-
         if(form.Vida.length > 0 && errors.Vida === '') {
+            console.log('todoBien')
             return setErrors({...errors, Vida:'✓'})
         } else if(form.Vida === '' && errors.Vida === '✓'){
             console.log('falta')
@@ -93,6 +93,7 @@ function Form() {
         }
 
         if(form.Ataque.length > 0 && errors.Ataque === '') {
+            console.log('todoBien')
             return setErrors({...errors, Ataque:'✓'})
         } else if(form.Ataque === '' && errors.Ataque === '✓'){
             console.log('falta')
@@ -102,16 +103,16 @@ function Form() {
         }
 
         if(form.Defensa.length > 0 && errors.Defensa === '') {
+            console.log('todoBien')
             return setErrors({...errors, Defensa:'✓'})
         } else if(form.Defensa === '' && errors.Defensa === '✓'){
             console.log('falta')
             return setErrors({...errors, Defensa:'Este campo es obligatorio'})
         } else if(form.Defensa.length > 0 && errors.Defensa === 'Este campo es obligatorio'){
-            return setErrors({...errors, Defensa:'✓'})
+            return setErrors({...errors, Ataque:'✓'})
         }
-
+   
     }
-
     
     return (
         

@@ -5,6 +5,7 @@ import { capitalizeFN } from '../../utils/functions';
 
 
 const Pokemon = (props) => {
+    console.log(props.Nombre)
     const capitalize = capitalizeFN(props.Nombre);
     
 
